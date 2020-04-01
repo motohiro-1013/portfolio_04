@@ -1,0 +1,13 @@
+current directory: /Users/moto/portfolio_04/vender/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+/Users/moto/.rbenv/versions/2.6.5/bin/ruby -I /Users/moto/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200322-67757-129k73t.rb extconf.rb
+creating Makefile
+
+current directory: /Users/moto/portfolio_04/vender/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/moto/portfolio_04/vender/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/moto/portfolio_04/vender/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+make "DESTDIR=" install
