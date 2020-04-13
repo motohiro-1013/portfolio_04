@@ -35,7 +35,6 @@ class PostsController < ApplicationController
         @post.name = params[:name]
         @post.text = params[:text]
         @post.image = params[:image]
-        binding.pry
         if @post.save
             flash[:notice]="編集に成功しました"
             redirect_to("/posts")
@@ -54,7 +53,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.permit(:name, :text, :image)
+        params.require(:post).permit(:name, :text, :image)
     end
 
 end

@@ -1,6 +1,8 @@
 <div class="container">
   <%= render "shared/flash_messages" %>
+
     <h3 class="title-new">旅を記録する</h3>
+
     <div class="post">
         <% @post.errors.full_messages.each do |message| %>
           <div class="form-error">
@@ -8,20 +10,25 @@
           </div>
         <% end %>
 
-      <%= form_tag(posts_path, method: :post, multipart: true) do |f|%>
+      <%= form_with(model: @post, local: true, multipart: :true) do |f|%>
         <form action="index.html" method="post">
+
           <div class="form-group">
             <label for="name">国・スポット</label>
-            <textarea name="name" class="form-control" id="name" placeholder="京都・金閣寺"><%= @post.name %></textarea>
+            <%= f.text_field :name, class:"form-control", placeholder:"京都・金閣寺"%>
           </div>
 
           <div class="form-group">
             <label for="message">本文</label>
-            <textarea id="text" name="text" rows="8" cols="80" class="form-control" placeholder="雪化粧がとても綺麗。"><%= @post.text %></textarea>
+            <%= f.text_field :text, class:"form-control", placeholder:"雪化粧がとても綺麗"%>
           </div>
 
-          <input name="image" type="file">
-          <button type="submit" class="btn btn-primary btn-lg btn-block">記録する</button>
+          <div class="form-group">
+            <%= f.file_field :image %>
+          </div>
+
+          <%= f.submit "記録する", class: "btn btn-primary btn-lg btn-block" %>
+
         </form>
       <% end %>
     </div>
